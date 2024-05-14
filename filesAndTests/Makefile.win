@@ -1,0 +1,18 @@
+CC = g++
+
+all: yadro
+
+yadro: yadro.o ComputerClub.o myTime.o
+	$(CC) -o yadro yadro.o ComputerClub.o myTime.o
+
+yadro.o: yadro.cpp
+	$(CC) -c yadro.cpp
+
+ComputerClub.o: ComputerClub.cpp ComputerClub.h myTime.o
+	$(CC) -c ComputerClub.cpp myTime.o
+
+myTime.o: myTime.cpp myTime.h
+	$(CC) -c myTime.cpp
+
+clean:
+	rm -f *.o
