@@ -14,8 +14,8 @@ void GetFileInformation(std::vector<std::string>& lines, std::regex Number, std:
 
 	std::regex NumberString("^[0-9]+$"); //1 and 3 entering strings
 	std::regex OpenClose("^[0-9]{2}:[0-9]{2} [0-9]{2}:[0-9]{2}$"); //open and close time string
-	std::regex StringWithID2("^[0-9]{2}:[0-9]{2} (\\d+) [A-Za-z0-9-_]+ (\\d*)$"); //string with event ID 2
-	std::regex OtherIDStrings("^[0-9]{2}:[0-9]{2} (\\d+) [A-Za-z0-9-_]+$"); // strings with event ID 1,3,4
+	std::regex StringWithID2("^[0-9]{2}:[0-9]{2} (\\d+) [a-z0-9-_]+ (\\d*)$"); //string with event ID 2
+	std::regex OtherIDStrings("^[0-9]{2}:[0-9]{2} (\\d+) [a-z0-9-_]+$"); // strings with event ID 1,3,4
 
 	int numberOfTables;
 	int count = 0;
@@ -124,7 +124,7 @@ int main(int argc, char** argv) {
 	std::regex Number(" (\\d+) "); //to highlight the event number
 	std::regex NumberOfTable(" (\\d*)"); //to highlight the number of the table
 	std::regex time("^[0-9]{2}:[0-9]{2}"); // to highlight the time of the event
-	std::regex client(" [A-Za-z0-9-_]+"); // for the record name of client
+	std::regex client(" [a-z0-9-_]+"); // for the record name of client
 
 	GetFileInformation(lines, Number, argv[1]); //checking the file for correctness + splitting into lines
 
