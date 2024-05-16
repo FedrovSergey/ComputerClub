@@ -122,7 +122,7 @@ int main(int argc, char** argv) {
 	std::vector<std::string> lines;
 
 	std::regex Number(" (\\d+) "); //to highlight the event number
-	std::regex NumberOfTable(" (\\d)"); //to highlight the number of the table
+	std::regex NumberOfTable(" (\\d*)"); //to highlight the number of the table
 	std::regex time("^[0-9]{2}:[0-9]{2}"); // to highlight the time of the event
 	std::regex client(" [A-Za-z0-9-_]+"); // for the record name of client
 
